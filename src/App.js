@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css"
-import { HelmetProvider } from "react-helmet-async";
 import Cursor from "./components/ParallaxWrapper"; // adjust path
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/header";
@@ -15,16 +14,13 @@ export default function App() {
   return (
     <>
       <div>
-        <HelmetProvider>
-          <Header />
-          <Banner />
-          <About />
-          <Menu />
-          <Reservation />
-          <Contact />
-          <Footer />
-        </HelmetProvider>
-
+        <Header />
+        <Banner />
+        <About />
+        <Menu />
+        <Reservation />
+        <Contact />
+        <Footer />
       </div>
       <div> <Cursor /></div>
     </>
