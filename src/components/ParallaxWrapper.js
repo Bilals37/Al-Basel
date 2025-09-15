@@ -1,11 +1,28 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../CSS/cursour.css"; // move your CSS here
 
 const Cursor = () => {
+    const [isMobile, setIsMobile] = useState(false);
     const coords = useRef({ x: 0, y: 0 });
     const circlesRef = useRef([]);
 
     useEffect(() => {
+        // Check for mobile view
+        const checkScreen = () => {
+            setIsMobile(window.innerWidth <= 768); // adjust breakpoint if needed
+        };
+
+        checkScreen(); // run on mount
+        window.addEventListener("resize", checkScreen);
+
+        return () => {
+            window.removeEventListener("resize", checkScreen);
+        };
+    }, []);
+
+    useEffect(() => {
+        if (isMobile) return; // 🚫 stop logic for mobile
+
         const handleMouseMove = (e) => {
             coords.current.x = e.clientX;
             coords.current.y = e.clientY;
@@ -14,8 +31,10 @@ const Cursor = () => {
         window.addEventListener("mousemove", handleMouseMove);
 
         circlesRef.current.forEach((circle) => {
-            circle.x = 0;
-            circle.y = 0;
+            if (circle) {
+                circle.x = 0;
+                circle.y = 0;
+            }
         });
 
         function animateCircles() {
@@ -28,12 +47,14 @@ const Cursor = () => {
                 circle.style.left = x - 12 + "px";
                 circle.style.top = y - 12 + "px";
 
-                circle.style.transform = `scale(${(circlesRef.current.length - index) / circlesRef.current.length})`;
+                circle.style.transform = `scale(${(circlesRef.current.length - index) / circlesRef.current.length
+                    })`;
 
                 circle.x = x;
                 circle.y = y;
 
-                const nextCircle = circlesRef.current[index + 1] || circlesRef.current[0];
+                const nextCircle =
+                    circlesRef.current[index + 1] || circlesRef.current[0];
                 x += (nextCircle.x - x) * 0.3;
                 y += (nextCircle.y - y) * 0.3;
             });
@@ -46,7 +67,10 @@ const Cursor = () => {
         return () => {
             window.removeEventListener("mousemove", handleMouseMove);
         };
-    }, []);
+    }, [isMobile]);
+
+    // 🚫 Do not render on mobile
+    if (isMobile) return null;
 
     return (
         <div className="cursor">

@@ -40,7 +40,7 @@ I want to reserve a table.%0A
 %0A
 Thank You!`;
 
-        const url = `https://wa.me/918378027567?text=${message}`;
+        const url = `https://wa.me/966555555?text=${message}`;
         window.open(url, "_blank");
     };
 
