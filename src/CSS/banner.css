@@ -1,0 +1,102 @@
+.banner {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: url("https://images.unsplash.com/photo-1600891964599-f61ba0e24092") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* left alignment */
+    padding-left: 8%;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    max-width: 600px;
+    text-align: left;
+    /* align text left */
+}
+
+.banner-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.banner-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.btn-group {
+    display: flex;
+    gap: 12px;
+    /* spacing between buttons */
+}
+
+.banner-btn {
+    width: 40%;
+    min-width: 120px;
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+.order-btn {
+    background-color: #28a745;
+    border: none;
+    color: #fff;
+}
+
+.order-btn:hover {
+    background-color: #218838;
+    color: #fff;
+}
+
+/* Reserve Table button → Black */
+.reserve-btn {
+    background-color: #000;
+    border: none;
+    color: #fff;
+}
+
+.reserve-btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .banner-btn {
+        width: 50%;
+        /* wider on mobile so it looks neat */
+    }
+
+    .btn-group .btn {
+        width: 20px;
+    }
+
+    .banner-title {
+        font-size: 2rem;
+    }
+
+    .banner-subtitle {
+        font-size: 1rem;
+    }
+
+    .btn-group {
+        flex-direction: row;
+        /* still side by side */
+        flex-wrap: wrap;
+    }
+}

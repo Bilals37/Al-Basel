@@ -1,0 +1,166 @@
+#menu {
+    /* margin-top: 0px; */
+    padding: 0 !important;
+}
+
+/* Wrap images to enforce square shape */
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    /* 1:1 aspect ratio */
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Actual image */
+.menu-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Hover effect */
+.image-wrapper:hover .menu-img {
+    transform: scale(1.1);
+    /* zoom in */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    filter: brightness(1.05);
+    /* slight brightness */
+}
+
+.circle-rotation-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 450px;
+    height: 450px;
+    margin: 0 auto 40px auto;
+    overflow: visible;
+}
+
+.circle-rotation-wrapper svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: auto;
+    position: relative;
+    transform: none;
+}
+
+.circle-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.rotating-text {
+    font-weight: bold;
+    fill: #000000;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.rotating-text.large {
+    font-size: 26px;
+    /* 16px + 10% */
+}
+
+.rotating-text.medium {
+    font-size: 20px;
+    /* 14px + 10% */
+}
+
+.rotating-text.small {
+    font-size: 14px;
+    /* 12px + 10% */
+}
+
+/* Animations */
+.rotate-circle {
+    transform-origin: 200px 200px;
+}
+
+.rotate-circle.slow {
+    animation: rotateText 80s linear infinite;
+}
+
+.rotate-circle.medium {
+    animation: rotateText 60s linear infinite;
+}
+
+.rotate-circle.fast {
+    animation: rotateText 40s linear infinite;
+}
+
+.rotate-circle.reverse {
+    animation-direction: reverse;
+}
+
+@keyframes rotateText {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .circle-rotation-wrapper {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+    }
+
+    .circle-rotation-wrapper svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .rotating-text {
+        font-size: 0.7rem;
+        /* scale down text so it fits */
+        letter-spacing: 1px;
+    }
+
+
+    /* Increased each size by ~10% */
+    .rotating-text.large {
+        font-size: 18px;
+        /* was 16px */
+    }
+
+    .rotating-text.medium {
+        font-size: 15px;
+        /* was 14px */
+    }
+
+    .rotating-text.small {
+        font-size: 13px;
+        /* was 12px */
+    }
+
+    #menu {
+        margin-top: 0px !important;
+        padding: 0% !important;
+    }
+}
+
+
+/* @media (min-width: 768px) and (max-width: 1000px) {
+    .circle-rotation-wrapper {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+    }
+} */

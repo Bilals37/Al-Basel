@@ -1,0 +1,143 @@
+/* container override so the navbar can be centered but responsive */
+.custom-navbar {
+    position: fixed;
+    /* fixed on top */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 10%;
+    margin-top: 5px;
+    z-index: 1050;
+    background-color: #080f43 !important;
+    border-radius: 20px;
+    padding: 0.35rem 0.75rem;
+}
+
+/* make inner container not expand beyond the navbar's width */
+.custom-container {
+    width: 100%;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+
+/* brand text */
+.brand-name {
+    font-weight: 700;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.logoimg {
+    border-radius: 50px;
+}
+
+/* nav links — desktop spacing */
+.custom-navbar .nav-link {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 8px;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+/* action buttons styling */
+.order-btn {
+    background-color: beige !important;
+    border: none !important;
+    color: black !important;
+    padding: 6px 14px;
+}
+
+.order-btn:hover {
+    background-color: #218838 !important;
+}
+
+.reserve-btn {
+    background-color: #000 !important;
+    border: none !important;
+    color: #fff !important;
+    padding: 6px 14px;
+}
+
+.reserve-btn:hover {
+    background-color: #333 !important;
+}
+
+/* MOBILE: make navbar full width and center nav links */
+@media (max-width: 991.98px) {
+    .custom-navbar {
+        width: 100%;
+        left: 0;
+        transform: none;
+        top: 0;
+        margin-top: 0;
+        border-radius: 0;
+    }
+
+    .logoimg {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* center nav block and links when collapsed */
+    .custom-navbar .navbar-collapse {
+        background-color: #080f43 !important;
+        padding: 0.75rem 1rem;
+    }
+
+    /* center nav and make links full-width-ish for tap targets */
+    .mobile-center-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: #080f43 !important;
+    }
+
+    .mobile-center-nav .nav-link {
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        /* border-bottom: 1px solid rgba(255, 255, 255, 0.03); */
+    }
+
+    /* hide action buttons (we used d-none d-lg-flex in JSX) — but ensure no extra spacing */
+    .action-buttons {
+        display: none !important;
+    }
+}
+
+/* a little spacing tweak for desktop */
+@media (min-width: 992px) {
+    .custom-navbar .navbar-collapse {
+        align-items: center;
+    }
+}
+
+
+@media (max-width: 1300px) and (min-width: 993px) {
+    .custom-navbar {
+        width: 90%;
+        height: auto;
+        /* auto so it adjusts naturally */
+        padding: 0.5rem 1rem;
+        /* keep breathing space */
+    }
+
+    /* Buttons */
+    .order-btn,
+    .reserve-btn {
+        padding: 6px 12px;
+        /* balanced padding */
+        font-size: 0.85rem;
+        /* slightly smaller text */
+        height: 40px;
+        width: 100px;
+        /* more space than 80px so text fits neatly */
+    }
+
+    /* Optional: brand name smaller */
+    .brand-name {
+        font-size: 1rem;
+    }
+}

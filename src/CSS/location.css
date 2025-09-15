@@ -1,0 +1,45 @@
+.location-section {
+    border-radius: 10px;
+    margin-top: 150px;
+}
+
+.location-card {
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ffffff;
+}
+
+.location-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.location-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #080f43;
+}
+
+.location-address {
+    font-size: 0.9rem;
+    color: #080f43;
+}
+
+.location-btn {
+    color: #080f43;
+    border-color: #080f43;
+}
+
+.location-btn:hover {
+    background-color: #080f43;
+    border-color: #080f43;
+    /* color: #080f43; */
+}
+
+
+@media (max-width: 768px) {
+    .location-section {
+        margin-top: 50px;
+        padding: 0% !important;
+    }
+}

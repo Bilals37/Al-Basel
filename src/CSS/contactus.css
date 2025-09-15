@@ -1,0 +1,47 @@
+#contact {
+    margin: 50px 0px;
+}
+
+/* Remove card look */
+.contact-details .card,
+.form-box {
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    transition: none;
+}
+
+/* Contact Details Text */
+.contact-details h4,
+.contact-details h5 {
+    font-weight: 700;
+    color: #222;
+}
+
+.contact-details p,
+.contact-details li {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Social Icons */
+.social-icons a {
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.location {
+    list-style: none;
+    padding: 0%;
+}
+
+@media (max-width: 768px) {
+    #contact {
+        margin: 0px 0px;
+    }
+}
