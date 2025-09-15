@@ -31,123 +31,126 @@ Message: ${message}`;
     };
 
     return (
-        <section id="contact" className="py-5 bg-light">
-            <Container>
+        <>
+            <section id="contact" className="py-5 bg-light">
+                <Container>
 
 
-                <Card className="p-4 shadow-lg border-0 rounded-4">
-                    <h2 className="text-center mb-5">Contact Us</h2>
-                    <Row>
-                        {/* Left: Contact Form */}
-                        <Col
-                            md={6}
-                            className="border-end pe-4 mb-4 mb-md-0" // ✅ remove border on small screens
-                        >
-                            <Form onSubmit={handleSubmit}>
-                                <Form.Group controlId="formName" className="mb-3">
-                                    <Form.Label>Name</Form.Label>
-                                    <Form.Control
-                                        type="text"
-                                        name="name"
-                                        placeholder="Enter your name"
-                                        value={formData.name}
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                </Form.Group>
+                    <Card className="p-4 shadow-lg border-0 rounded-4">
+                        <h2 className="text-center mb-5">Contact Us</h2>
+                        <Row>
+                            {/* Left: Contact Form */}
+                            <Col
+                                md={6}
+                                className="border-end pe-4 mb-4 mb-md-0" // ✅ remove border on small screens
+                            >
+                                <Form onSubmit={handleSubmit}>
+                                    <Form.Group controlId="formName" className="mb-3">
+                                        <Form.Label>Name</Form.Label>
+                                        <Form.Control
+                                            type="text"
+                                            name="name"
+                                            placeholder="Enter your name"
+                                            value={formData.name}
+                                            onChange={handleChange}
+                                            required
+                                        />
+                                    </Form.Group>
 
-                                <Form.Group controlId="formEmail" className="mb-3">
-                                    <Form.Label>Email</Form.Label>
-                                    <Form.Control
-                                        type="email"
-                                        name="email"
-                                        placeholder="Enter your email"
-                                        value={formData.email}
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                </Form.Group>
+                                    <Form.Group controlId="formEmail" className="mb-3">
+                                        <Form.Label>Email</Form.Label>
+                                        <Form.Control
+                                            type="email"
+                                            name="email"
+                                            placeholder="Enter your email"
+                                            value={formData.email}
+                                            onChange={handleChange}
+                                            required
+                                        />
+                                    </Form.Group>
 
-                                <Form.Group controlId="formPhone" className="mb-3">
-                                    <Form.Label>Phone Number</Form.Label>
-                                    <Form.Control
-                                        type="tel"
-                                        name="phone"
-                                        placeholder="Enter your phone number"
-                                        value={formData.phone}
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                </Form.Group>
+                                    <Form.Group controlId="formPhone" className="mb-3">
+                                        <Form.Label>Phone Number</Form.Label>
+                                        <Form.Control
+                                            type="tel"
+                                            name="phone"
+                                            placeholder="Enter your phone number"
+                                            value={formData.phone}
+                                            onChange={handleChange}
+                                            required
+                                        />
+                                    </Form.Group>
 
-                                <Form.Group controlId="formMessage" className="mb-3">
-                                    <Form.Label>Message</Form.Label>
-                                    <Form.Control
-                                        as="textarea"
-                                        name="message"
-                                        rows={4}
-                                        placeholder="Type your message"
-                                        value={formData.message}
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                </Form.Group>
+                                    <Form.Group controlId="formMessage" className="mb-3">
+                                        <Form.Label>Message</Form.Label>
+                                        <Form.Control
+                                            as="textarea"
+                                            name="message"
+                                            rows={4}
+                                            placeholder="Type your message"
+                                            value={formData.message}
+                                            onChange={handleChange}
+                                            required
+                                        />
+                                    </Form.Group>
 
-                                <Button variant="danger" type="submit" className="w-100">
-                                    Send via WhatsApp
-                                </Button>
-                            </Form>
-                        </Col>
+                                    <Button variant="danger" type="submit" className="w-100">
+                                        Send via WhatsApp
+                                    </Button>
+                                </Form>
+                            </Col>
 
-                        {/* Right: Contact Details */}
-                        <Col md={6} className="ps-4 d-flex flex-column justify-content-center">
-                            <div>
-                                <h4>Headquarters</h4>
-                                <p>📍 Riyadh, Saudi Arabia</p>
+                            {/* Right: Contact Details */}
+                            <Col md={6} className="ps-4 d-flex flex-column justify-content-center">
+                                <div>
+                                    <h4>Headquarters</h4>
+                                    <p>📍 Riyadh, Saudi Arabia</p>
 
-                                <h5>Our Locations</h5>
-                                <ul className="location">
-                                    <li>Jeddah | Dammam | Mecca | Medina | Khobar | Tabuk</li>
-                                </ul>
+                                    <h5>Our Locations</h5>
+                                    <ul className="location">
+                                        <li>Jeddah | Dammam | Mecca | Medina | Khobar | Tabuk</li>
+                                    </ul>
 
-                                <h5>Contact Information</h5>
-                                <p>📞 +966 123 456 789</p>
-                                <p>📱 +966 555 444 333</p>
-                                <p>✉️ info@albaselseafoods.com</p>
+                                    <h5>Contact Information</h5>
+                                    <p>📞 +966 123 456 789</p>
+                                    <p>📱 +966 555 444 333</p>
+                                    <p>✉️ info@albaselseafoods.com</p>
 
-                                <h5>Operating Hours</h5>
-                                <p>Mon - Sat: 9:00 AM - 10:00 PM</p>
-                                <p>Sunday: Closed</p>
+                                    <h5>Operating Hours</h5>
+                                    <p>Mon - Sat: 9:00 AM - 10:00 PM</p>
+                                    <p>Sunday: Closed</p>
 
-                                <h5>Connect With Us</h5>
-                                <div className="social-icons d-flex gap-3 mt-2">
-                                    <a
-                                        href="https://instagram.com"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <FaInstagram size={28} className="text-danger" />
-                                    </a>
-                                    <a
-                                        href="https://facebook.com"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <FaFacebook size={28} className="text-primary" />
-                                    </a>
-                                    <a
-                                        href="https://youtube.com"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <FaYoutube size={28} className="text-danger" />
-                                    </a>
+                                    <h5>Connect With Us</h5>
+                                    <div className="social-icons d-flex gap-3 mt-2">
+                                        <a
+                                            href="https://instagram.com"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <FaInstagram size={28} className="text-danger" />
+                                        </a>
+                                        <a
+                                            href="https://facebook.com"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <FaFacebook size={28} className="text-primary" />
+                                        </a>
+                                        <a
+                                            href="https://youtube.com"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <FaYoutube size={28} className="text-danger" />
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                        </Col>
-                    </Row>
-                </Card>
-            </Container>
-        </section>
+                            </Col>
+                        </Row>
+                    </Card>
+                </Container>
+            </section>
+        </>
+
     );
 }

@@ -37,30 +37,34 @@ const locations = [
 
 export default function Location() {
     return (
-        <section id="locations" className="location-section py-5">
-            <Container>
-                <h2 className="text-center mb-4">Our Locations</h2>
-                <Row>
-                    {locations.map((loc, index) => (
-                        <Col key={index} md={4} sm={6} xs={12} className="mb-4">
-                            <Card className="location-card shadow-sm h-100">
-                                <Card.Body>
-                                    <Card.Title className="location-title">{loc.name}</Card.Title>
-                                    <Card.Text className="location-address">{loc.address}</Card.Text>
-                                    <a
-                                        href={loc.map}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="btn btn-outline-primary btn-sm mt-2 location-btn"
-                                    >
-                                        View on Map
-                                    </a>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    ))}
-                </Row>
-            </Container>
-        </section>
+        <>
+
+            <section id="locations" className="location-section py-5">
+                <Container>
+                    <h2 className="text-center mb-4">Our Locations</h2>
+                    <Row>
+                        {locations.map((loc, index) => (
+                            <Col key={index} md={4} sm={6} xs={12} className="mb-4">
+                                <Card className="location-card shadow-sm h-100">
+                                    <Card.Body>
+                                        <Card.Title className="location-title">{loc.name}</Card.Title>
+                                        <Card.Text className="location-address">{loc.address}</Card.Text>
+                                        <a
+                                            href={loc.map}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="btn btn-outline-primary btn-sm mt-2 location-btn"
+                                        >
+                                            View on Map
+                                        </a>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        ))}
+                    </Row>
+                </Container>
+            </section>
+        </>
+
     );
 }
